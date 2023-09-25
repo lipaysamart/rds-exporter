@@ -1,0 +1,15 @@
+accessKey: ""
+accessKeySecret: ""
+instanceInfos:
+  - rds
+metrics:
+  acs_rds_dashboard:
+  - desc: CPU使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: CpuUsage
+    # 5, 60, 300 抓取间隔
+    period: 60
+    unit: '%'

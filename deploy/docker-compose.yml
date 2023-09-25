@@ -1,0 +1,13 @@
+version: "3"
+services:
+  aliyun-exporter:
+    image: registry.cn-guangzhou.aliyuncs.com/kubernetes-default/rds-exporter:v1
+    volumes:
+    - ../config.yaml:/etc/aliyun-exporter.yaml
+    command:
+    - serve
+    - -c
+    - /etc/aliyun-exporter.yaml
+    ports:
+    - 9527:9527
+    restart: always

@@ -1,0 +1,106 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rds-exporter-config
+  namespace: monitoring
+  labels:
+    app: rds-exporter
+data:
+  config.yaml: |
+    accessKey: xxxxxxxx
+    accessKeySecret: xxxxxxxx
+    instanceInfos:
+    - rds
+    metrics:
+      acs_rds_dashboard:
+      - desc: CPU使用率
+        dimensions:
+        - userId
+        - instanceId
+        measure: Average,Minimum,Maximum
+        name: CpuUsage
+        # 5, 60, 300 抓取间隔
+        period: 60
+        unit: '%'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rds-exporter-svc
+  namespace: monitoring
+  labels:
+    app: rds-exporter
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: rds-exporter
+---
+# Source: rds-exporter/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rds-exporter
+  namespace: monitoring
+  labels:
+    app: rds-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rds-exporter
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9527"
+        prometheus.io/scrape: "true"
+      labels:
+        app: rds-exporter
+    spec:
+      containers:
+        - name: rds-exporter
+          securityContext:
+            {}
+          image: "registry.cn-guangzhou.aliyuncs.com/kubernetes-default/rds-exporter:v1"
+          args:
+            - serve
+            - --config=/etc/rds-exporter.yaml
+            - --log.format=json
+            - --log.level=info
+            - --rate-limit=64
+          env:
+            - name: TZ
+              value: America/Los_Angeles
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 9527
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            requests:
+              memory: 200Mi
+              cpu: 50m
+            limits:
+              memory: 200Mi
+              cpu: 50m
+          volumeMounts:
+            - name: config
+              mountPath: /etc/rds-exporter.yaml
+              subPath: config.yaml
+      volumes:
+        - name: config
+          configMap:
+            name: rds-exporter-config

@@ -1,0 +1,847 @@
+metrics:
+  acs_rds_dashboard:
+  - desc: 活跃会话数量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ActiveSessions
+    period: 5,60,300
+    unit: count
+  - desc: 每秒Delete量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComDelete
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒Insert量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComInsert
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒InsertSelect量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComInsertSelect
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒Replace量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComReplace
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒ReplaceSelect量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComReplaceSelect
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒Select量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComSelect
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒Update量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ComUpdate
+    period: 5,60,300
+    unit: countSecond
+  - desc: 连接数使用率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ConnectionUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: CPU使用率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_CpuUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: 只读实例延迟
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_DataDelay
+    period: 5,60,300
+    unit: Second
+  - desc: 数据磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_DataDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: 磁盘使用率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_DiskUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: IOPS使用率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_IOPSUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: BP脏页百分率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_IbufDirtyRatio
+    period: 5,60,300
+    unit: '%'
+  - desc: BP读命中率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_IbufReadHit
+    period: 5,60,300
+    unit: '%'
+  - desc: 每秒逻辑读次数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_IbufRequestR
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒逻辑写次数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_IbufRequestW
+    period: 5,60,300
+    unit: countSecond
+  - desc: BP利用率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_IbufUseRatio
+    period: 5,60,300
+    unit: '%'
+  - desc: InnoDB每秒读取数据量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBDataRead
+    period: 5,60,300
+    unit: Kbyte
+  - desc: InnoDB每秒写入数据量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBDataWritten
+    period: 5,60,300
+    unit: Kbyte
+  - desc: InnoDB每秒日志fsync量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBLogFsync
+    period: 5,60,300
+    unit: countSecond
+  - desc: InnoDB每秒日志写请求次数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBLogWriteRequests
+    period: 5,60,300
+    unit: countSecond
+  - desc: InnoDB每秒日志物理写次数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBLogWrites
+    period: 5,60,300
+    unit: countSecond
+  - desc: InnoDB每秒删除行数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBRowDelete
+    period: 5,60,300
+    unit: countSecond
+  - desc: InnoDB每秒插入行数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBRowInsert
+    period: 5,60,300
+    unit: countSecond
+  - desc: InnoDB每秒等待row locks时间
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBRowLockTimePs
+    period: 5,60,300
+    unit: ms
+  - desc: InnoDB每秒读取行数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBRowRead
+    period: 5,60,300
+    unit: countSecond
+  - desc: InnoDB每秒更新行数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InnoDBRowUpdate
+    period: 5,60,300
+    unit: countSecond
+  - desc: 实例磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_InstanceDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: 日志磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_LogDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: 内存使用率
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_MemoryUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: 网络流入带宽
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_NetworkInNew
+    period: 5,60,300
+    unit: bits/s
+  - desc: 网络流出带宽
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_NetworkOutNew
+    period: 5,60,300
+    unit: bits/s
+  - desc: 文件打开数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_OpenFiles
+    period: 5,60,300
+    unit: count
+  - desc: 其他磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_OtherDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: 每秒查询量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_QPS
+    period: 5,60,300
+    unit: countSecond
+  - desc: 只读实例IO线程状态
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_SlaveIORunning
+    period: 5,60,300
+    unit: value
+  - desc: 只读实例SQL线程状态
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_SlaveSQLRunning
+    period: 5,60,300
+    unit: value
+  - desc: 每秒慢查询量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_SlowQueries
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒事务数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_TPS
+    period: 5,60,300
+    unit: countSecond
+  - desc: 每秒创建临时表数量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_TempDiskTableCreates
+    period: 5,60,300
+    unit: countSecond
+  - desc: 线程连接数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ThreadsConnected
+    period: 5,60,300
+    unit: count
+  - desc: 活跃线程数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ThreadsRunning
+    period: 5,60,300
+    unit: count
+  - desc: 临时磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_TmpDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: 所有会话连接
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_TotalSessions
+    period: 5,60,300
+    unit: count
+  - desc: 每秒物理读次数
+    dimensions:
+    - userId
+    - instanceId
+    - nodeId
+    measure: Average,Maximum,Minimum
+    name: Cluster_ibufPoolReads
+    period: 5,60,300
+    unit: countSecond
+  - desc: 连接数使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: ConnectionUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: CPU使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: CpuUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: 只读实例延迟
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: DataDelay
+    period: 5,60,300
+    unit: Second
+  - desc: 磁盘使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: DiskUsage
+    period: 5,60,300
+    unit: '%'
+  - dimensions:
+    - userId
+    - groupId
+    measure: Average,Minimum,Maximum
+    name: GroupCPUUtilization
+    period: 60,300
+    unit: '%'
+  - dimensions:
+    - userId
+    - groupId
+    measure: Average,Minimum,Maximum
+    name: GroupConnectionUtilization
+    period: 60,300
+    unit: '%'
+  - dimensions:
+    - userId
+    - groupId
+    measure: Average,Minimum,Maximum
+    name: GroupDiskUtilization
+    period: 60,300
+    unit: '%'
+  - dimensions:
+    - userId
+    - groupId
+    measure: Average,Minimum,Maximum
+    name: GroupIOPSUtilization
+    period: 60,300
+    unit: '%'
+  - desc: IOPS使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: IOPSUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: 内存使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: MemoryUsage
+    period: 5,60,300
+    unit: '%'
+  - desc: MySQL_ActiveSessions
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: MySQL_ActiveSessions
+    period: 5,60,300
+    unit: count
+  - desc: MySQL每秒Delete量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComDelete
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒Insert量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComInsert
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒InsertSelect量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComInsertSelect
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒Replace量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComReplace
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒ReplaceSelect量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComReplaceSelect
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒Select量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComSelect
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒Update量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ComUpdate
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_数据磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_DataDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: MySQL_BP脏页百分率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_IbufDirtyRatio
+    period: 5,60,300
+    unit: '%'
+  - desc: MySQL_BP读命中率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_IbufReadHit
+    period: 5,60,300
+    unit: '%'
+  - desc: MySQL每秒逻辑读次数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_IbufRequestR
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒逻辑写次数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_IbufRequestW
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_BP利用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_IbufUseRatio
+    period: 5,60,300
+    unit: '%'
+  - desc: MySQL_InnoDB每秒读取数据量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBDataRead
+    period: 5,60,300
+    unit: Kbyte
+  - desc: MySQL_InnoDB每秒写入数据量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBDataWritten
+    period: 5,60,300
+    unit: Kbyte
+  - desc: MySQL_InnoDB每秒日志fsync量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBLogFsync
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_InnoDB每秒日志写请求次数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBLogWriteRequests
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_InnoDB每秒日志物理写次数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBLogWrites
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_InnoDB每秒删除行数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBRowDelete
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_InnoDB每秒插入行数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBRowInsert
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_InnoDB每秒等待row locks时间
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBRowLockTimePs
+    period: 5,60,300
+    unit: ms
+  - desc: MySQL_InnoDB每秒读取行数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBRowRead
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_InnoDB每秒更新行数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InnoDBRowUpdate
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_实例磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_InstanceDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: MySQL_日志磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_LogDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: MySQL网络流入带宽
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: MySQL_NetworkInNew
+    period: 60,300
+    unit: bits/s
+  - desc: MySQL网络流出带宽
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Minimum,Maximum
+    name: MySQL_NetworkOutNew
+    period: 60,300
+    unit: bits/s
+  - desc: 文件打开数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_OpenFiles
+    period: 5,60,300
+    unit: count
+  - desc: MySQL_其他磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_OtherDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: MySQL_ProxyCpu使用率
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ProxyCpuUsage
+    period: 60,300
+    unit: '%'
+  - desc: MySQL每秒查询量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_QPS
+    period: 5,60,300
+    unit: countSecond
+  - desc: 只读实例IO线程状态
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_SlaveIORunning
+    period: 5,60,300
+    unit: value
+  - desc: 只读实例SQL线程状态
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_SlaveSQLRunning
+    period: 5,60,300
+    unit: value
+  - desc: MySQL每秒慢查询量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_SlowQueries
+    period: 5,60,300
+    unit: countSecond
+  - desc: 主实例备库同步延迟
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_StandbySyncLag
+    period: 5,60,300
+    unit: second
+  - desc: MySQL每秒事务数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_TPS
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL每秒创建临时表数量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_TempDiskTableCreates
+    period: 5,60,300
+    unit: countSecond
+  - desc: MySQL_线程连接数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ThreadsConnected
+    period: 5,60,300
+    unit: count
+  - desc: MySQL_活跃线程数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ThreadsRunning
+    period: 5,60,300
+    unit: count
+  - desc: MySQL_临时磁盘使用量
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_TmpDiskSize
+    period: 5,60,300
+    unit: Megabytes
+  - desc: 所有会话连接
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_TotalSessions
+    period: 5,60,300
+    unit: count
+  - desc: MySQL每秒物理读次数
+    dimensions:
+    - userId
+    - instanceId
+    measure: Average,Maximum,Minimum
+    name: MySQL_ibufPoolReads
+    period: 5,60,300
+    unit: countSecond
+region: cn-hongkong
+
